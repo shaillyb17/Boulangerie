@@ -143,6 +143,7 @@ function displayTray() {
   trayItems = JSON.parse(trayItems);
   let productContainer = document.querySelector(".products");
   let trayCost = localStorage.getItem('totalCost');
+  flag = 0;
 
   if (trayItems && productContainer) {
     document.getElementById('promo-container').style.visibility = "visible";
@@ -269,7 +270,6 @@ function checkPromoCode() {
       trayCost -= trayCost / 2;
       localStorage.setItem("totalCost", trayCost);
       console.log(trayCost);
-      flag = 1;
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -278,13 +278,21 @@ function checkPromoCode() {
         timer: 1500
       })
       displayTray();
+      flag = 1;
     } else if (input.value == "") {
       displayTray();
     } else if (flag == 1) {
-      alert("You can't enter the same code again!");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'You can\'t enter the same promo code again'
+      })
     } else {
-      alert("Invalid promo code!");
-      displayTray();
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Invalid promo code'
+      })
     }
   })
 }
@@ -306,14 +314,13 @@ function placeOrder() {
   })
 }
 
-function forceInputUppercase(e)
-  {
-    var start = e.target.selectionStart;
-    var end = e.target.selectionEnd;
-    e.target.value = e.target.value.toUpperCase();
-    e.target.setSelectionRange(start, end);
-  }
-  document.getElementById('code').addEventListener("keyup", forceInputUppercase, false);
+function forceInputUppercase(e) {
+  var start = e.target.selectionStart;
+  var end = e.target.selectionEnd;
+  e.target.value = e.target.value.toUpperCase();
+  e.target.setSelectionRange(start, end);
+}
+document.getElementById('code').addEventListener("keyup", forceInputUppercase, false);
 
 
 
