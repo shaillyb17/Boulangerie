@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Boulangerie</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Jost:wght@300&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link href="https://fonts.googleapis.com/css?family=Arapey|Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="main.js" async></script>
+
+<body>
+  <!-- navBar -->
+  <nav id="nav" class="navbar fixed-top navbar-toggleable-sm " data-spy="affix">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" style="font-weight: 700; font-size: 1.2rem;">Boulangerie</a>
+      <a href="tray.html" class="navbar-tray" style="float: right; color: #d27548;font-size: 20px; font-weight:700;"><i class="fas fa-shopping-cart fa-2x"></i>( <span>0</span> )</a>
+    </div>
+  </nav>
+
+  <div class="first2">
+    <div class="nameTagline">
+      <h1></h1>
+      <h3></h3>
+    </div>
+  </div>
+
+
+  <div class="products">
+    <h3>Looks like you haven't chosen anything yet...</h3>
+  </div>
+  <div id="promo-container" style="visibility: hidden;">
+    <div class="promo">
+      <p style="color: white;">Have a promo code?</p>
+      <input type="text" id ='code' name="promoCode" placeholder=" Enter code here" class="code">
+      <br>
+      <a class="btn btn-md applyCode" style="background-color: #d27548; color: #fff;">Apply Code</a>
+      <br>
+    </div>
+  <div class="placeOrder">
+    <a class="btn btn-lg btn-success placeOrderBtn" style="color: #fff;">Place Order</a>
+  </div>
+
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+</body>
+
+</html>
