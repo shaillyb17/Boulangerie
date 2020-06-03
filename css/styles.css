@@ -6,6 +6,13 @@
 body {
   font-family: 'Jost', sans-serif;
   background-color: #ebb77b;
+  animation-name: pageBackground;
+  animation-duration: 4s;
+}
+
+@keyframes pageBackground {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 html,body {
@@ -74,9 +81,27 @@ html,body {
 }
 
 nav .navbar-nav .nav-link,
-nav .navbar-brand {
+nav .navbar-brand,
+nav .navbar-tray {
    color: #d27548;
 }
+
+nav:hover .navbar-nav .nav-link,
+nav:hover .navbar-brand,
+nav:hover .navbar-tray {
+  color: #fff;
+  background-color: none !important;
+}
+
+.addToTray{
+  background-color: #d27548;
+  color: #fff !important;
+}
+a:hover{
+  background-color: #ebb77b ;
+  color: #fff;
+}
+
 
 section {
   height:calc(90% - 50px);
@@ -84,7 +109,7 @@ section {
 
 /* Header */
 .header{
-  padding: 5% 3%;
+  padding: 5% 0.1%;
   color: #fff;
   text-align: center;
 
@@ -209,5 +234,5 @@ input[type=text]{
 #footer{
   color: #fff;
   text-align: center;
-  padding: 5% 0;
+  padding: 5% 3%;
 }
