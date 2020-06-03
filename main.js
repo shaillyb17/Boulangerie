@@ -143,10 +143,11 @@ function displayTray() {
   trayItems = JSON.parse(trayItems);
   let productContainer = document.querySelector(".products");
   let trayCost = localStorage.getItem('totalCost');
-  flag = 0;
+
 
   if (trayItems && productContainer) {
     document.getElementById('promo-container').style.visibility = "visible";
+    flag = 0;
     productContainer.innerHTML = '';
     Object.values(trayItems).map(item => {
       productContainer.innerHTML += `
@@ -267,7 +268,9 @@ function checkPromoCode() {
 
   applyCodeBtn.addEventListener('click', () => {
     if (input.value == "DONUT50" && flag == 0) {
+      console.log(trayCost/2);
       trayCost -= trayCost / 2;
+
       localStorage.setItem("totalCost", trayCost);
       console.log(trayCost);
       Swal.fire({
